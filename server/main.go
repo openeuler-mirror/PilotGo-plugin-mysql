@@ -2,8 +2,11 @@ package main
 
 import (
 	"fmt"
+	"os"
 
 	"gitee.com/openeuler/PilotGo-plugins/sdk/plugin/client"
+
+	"gitee.com/openeuler/PilotGo-plugin-mysql/config"
 )
 
 const Version = "0.0.1"
@@ -18,5 +21,10 @@ var PluginInfo = &client.PluginInfo{
 
 func main() {
 	fmt.Println("Thanks to choose PilotGo!")
+
+	if err := config.ConfigInit("./config.yaml"); err != nil {
+		fmt.Println("failed to init config module: %s", err.Error())
+		os.Exit(-1)
+	}
 
 }
