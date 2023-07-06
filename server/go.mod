@@ -2,7 +2,10 @@ module gitee.com/openeuler/PilotGo-plugin-mysql
 
 go 1.20
 
-require gitee.com/openeuler/PilotGo-plugins/sdk v0.0.0-20230701031621-2366052ddeda
+require (
+	gitee.com/openeuler/PilotGo-plugins/sdk v0.0.0-20230701031621-2366052ddeda
+	gopkg.in/yaml.v3 v3.0.1
+)
 
 require (
 	github.com/bytedance/sonic v1.8.0 // indirect
@@ -28,5 +31,4 @@ require (
 	golang.org/x/sys v0.6.0 // indirect
 	golang.org/x/text v0.7.0 // indirect
 	google.golang.org/protobuf v1.28.1 // indirect
-	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
