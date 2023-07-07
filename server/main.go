@@ -9,6 +9,7 @@ import (
 	"gitee.com/openeuler/PilotGo-plugins/sdk/logger"
 	"gitee.com/openeuler/PilotGo-plugins/sdk/plugin/client"
 
+	mclient "gitee.com/openeuler/PilotGo-plugin-mysql/client"
 	"gitee.com/openeuler/PilotGo-plugin-mysql/config"
 	"gitee.com/openeuler/PilotGo-plugin-mysql/httpserver"
 )
@@ -36,6 +37,11 @@ func main() {
 		os.Exit(-1)
 	}
 
+	if err := mclient.Init(PluginInfo); err != nil {
+		fmt.Printf("failed to init plugin client: %s\n", err.Error())
+		os.Exit(-1)
+	}
+
 	if err := httpserver.Start(); err != nil {
 		fmt.Printf("failed to start http server: %s\n", err.Error())
 		os.Exit(-1)
@@ -51,7 +57,7 @@ func main() {
 			logger.Info("signal interrupted: %s", s.String())
 			// TODO: DO EXIT
 
-			//
+			// http server exit
 			logger.Info("stopping http server")
 			httpserver.Stop()
 
