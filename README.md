@@ -1,17 +1,22 @@
 # PilotGo-plugin-mysql
 
 #### 介绍
-PilotGo mysql plugin to maintain, monitor and optimize mysql cluster.
+PilotGo MySQL应用插件，提供MySQL实例的监控、管理、安全分析及优化建议等功能。
+
+MySQL插件基于[mysqld-expoter](https://github.com/prometheus/mysqld_exporter)提供基本的监控数据采集，同时提供MySQL集群巡检、安全检查、性能分析、运行状态分析等功能，保障业务集群的稳定运行。
+
+*note*：PilotGo MySQL插件运行依赖PilotGo主平台，如何在PilotGo平台中使用插件，请参考PilotGo平台文档。
 
 #### 软件架构
-软件架构说明
+
+![design.png](./docs/pictures/design.png)
 
 
 #### 安装教程
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+1. 安装并运行PilotGo MySQL插件服务
+2. 在PilotGo平台导入MySQL插件应用
+3. 使用MySQL插件功能
 
 #### 使用说明
 
@@ -21,17 +26,7 @@ PilotGo mysql plugin to maintain, monitor and optimize mysql cluster.
 
 #### 参与贡献
 
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
-
-
-#### 特技
-
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+1. Fork 本仓库
+2. 新建 Feat_xxx 分支
+3. 提交代码
+4. 新建 Pull Request，提供详细的实现说明
