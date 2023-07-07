@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 
+	"gitee.com/openeuler/PilotGo-plugins/sdk/logger"
 	"gitee.com/openeuler/PilotGo-plugins/sdk/plugin/client"
 
 	"gitee.com/openeuler/PilotGo-plugin-mysql/config"
@@ -23,7 +24,12 @@ func main() {
 	fmt.Println("Thanks to choose PilotGo!")
 
 	if err := config.ConfigInit("./config.yaml"); err != nil {
-		fmt.Println("failed to init config module: %s", err.Error())
+		fmt.Printf("failed to init config module: %s\n", err.Error())
+		os.Exit(-1)
+	}
+
+	if err := logger.Init(config.Config().LogConf); err != nil {
+		fmt.Printf("failed to init logger module: %s\n", err.Error())
 		os.Exit(-1)
 	}
 
