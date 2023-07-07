@@ -1,1 +1,5 @@
+# config files
 config.yaml
+
+# executable bins
+server

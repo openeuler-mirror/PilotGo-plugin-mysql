@@ -8,6 +8,7 @@ import (
 	"gitee.com/openeuler/PilotGo-plugins/sdk/plugin/client"
 
 	"gitee.com/openeuler/PilotGo-plugin-mysql/config"
+	"gitee.com/openeuler/PilotGo-plugin-mysql/httpserver"
 )
 
 const Version = "0.0.1"
@@ -30,6 +31,11 @@ func main() {
 
 	if err := logger.Init(config.Config().LogConf); err != nil {
 		fmt.Printf("failed to init logger module: %s\n", err.Error())
+		os.Exit(-1)
+	}
+
+	if err := httpserver.Start(); err != nil {
+		fmt.Printf("failed to start http server: %s\n", err.Error())
 		os.Exit(-1)
 	}
 

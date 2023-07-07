@@ -35,7 +35,7 @@ type ServerConfig struct {
 	MysqlConf      *Mysql          `yaml:"mysql"`
 }
 
-var globalConfig *ServerConfig
+var globalConfig = &ServerConfig{}
 
 func ConfigInit(path string) error {
 	bytes, err := ioutil.ReadFile(path)
