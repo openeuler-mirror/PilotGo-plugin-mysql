@@ -3,6 +3,8 @@ package main
 import (
 	"fmt"
 	"os"
+	"os/signal"
+	"syscall"
 
 	"gitee.com/openeuler/PilotGo-plugins/sdk/logger"
 	"gitee.com/openeuler/PilotGo-plugins/sdk/plugin/client"
@@ -38,5 +40,24 @@ func main() {
 		fmt.Printf("failed to start http server: %s\n", err.Error())
 		os.Exit(-1)
 	}
+
+	// 信号监听
+	c := make(chan os.Signal, 1)
+	signal.Notify(c, syscall.SIGINT, syscall.SIGTERM, syscall.SIGQUIT)
+	for {
+		s := <-c
+		switch s {
+		case syscall.SIGINT, syscall.SIGTERM, syscall.SIGQUIT:
+			logger.Info("signal interrupted: %s", s.String())
+			// TODO: DO EXIT
+
+			goto EXIT
+		default:
+			logger.Info("unknown signal: %s", s.String())
+		}
+	}
+
+EXIT:
+	logger.Info("exit system, bye~")
 
 }
