@@ -51,6 +51,10 @@ func main() {
 			logger.Info("signal interrupted: %s", s.String())
 			// TODO: DO EXIT
 
+			//
+			logger.Info("stopping http server")
+			httpserver.Stop()
+
 			goto EXIT
 		default:
 			logger.Info("unknown signal: %s", s.String())
