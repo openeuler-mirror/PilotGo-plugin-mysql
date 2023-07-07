@@ -5,6 +5,8 @@ import (
 	"io/ioutil"
 
 	"gopkg.in/yaml.v3"
+
+	"gitee.com/openeuler/PilotGo-plugins/sdk/logger"
 )
 
 type HttpServer struct {
@@ -28,9 +30,9 @@ type Log struct {
 }
 
 type ServerConfig struct {
-	HttpServer HttpServer `yaml:"http_server"`
-	Log        Log        `yaml:"log"`
-	Mysql      Mysql      `yaml:"mysql"`
+	HttpServerConf *HttpServer     `yaml:"http_server"`
+	LogConf        *logger.LogOpts `yaml:"log"`
+	MysqlConf      *Mysql          `yaml:"mysql"`
 }
 
 var globalConfig *ServerConfig
