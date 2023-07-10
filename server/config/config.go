@@ -37,7 +37,7 @@ type ServerConfig struct {
 
 var globalConfig = &ServerConfig{}
 
-func ConfigInit(path string) error {
+func Init(path string) error {
 	bytes, err := ioutil.ReadFile(path)
 	if err != nil {
 		fmt.Printf("open config file %s failed! err = %s\n", path, err.Error())
