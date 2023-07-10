@@ -6,11 +6,12 @@ import (
 	"net/http"
 	"os"
 
+	"gitee.com/openeuler/PilotGo-plugins/sdk/logger"
 	"github.com/gin-gonic/gin"
 
 	"gitee.com/openeuler/PilotGo-plugin-mysql/client"
 	"gitee.com/openeuler/PilotGo-plugin-mysql/config"
-	"gitee.com/openeuler/PilotGo-plugins/sdk/logger"
+	"gitee.com/openeuler/PilotGo-plugin-mysql/httpserver/handler"
 )
 
 var httpServer *http.Server
@@ -49,4 +50,14 @@ func registerHandlers(engine *gin.Engine) {
 
 	// 注册client默认的handlers
 	client.RegisterHandlers(engine)
+
+	api := engine.Group("plugin/mysql/api")
+
+	// 监控agent相关接口
+	{
+		api.GET("/info", handler.AgentInfoHandler)
+		api.PUT("/install", handler.AgentInstallHandler)
+		api.PUT("/update", handler.AgentInstallHandler)
+		api.DELETE("/uninstall", handler.AgentUninstallHandler)
+	}
 }

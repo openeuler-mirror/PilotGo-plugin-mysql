@@ -14,11 +14,11 @@ import (
 	"gitee.com/openeuler/PilotGo-plugin-mysql/httpserver"
 )
 
-const Version = "0.0.1"
+const version = "0.0.1"
 
-var PluginInfo = &client.PluginInfo{
+var pluginInfo = &client.PluginInfo{
 	Name:        "mysql",
-	Version:     Version,
+	Version:     version,
 	Description: "mysql监控管理插件",
 	Author:      "guozhengxin",
 	Email:       "guozhengxin@kylinos.cn",
@@ -27,7 +27,7 @@ var PluginInfo = &client.PluginInfo{
 func main() {
 	fmt.Println("Thanks to choose PilotGo!")
 
-	if err := config.ConfigInit("./config.yaml"); err != nil {
+	if err := config.Init("./config.yaml"); err != nil {
 		fmt.Printf("failed to init config module: %s\n", err.Error())
 		os.Exit(-1)
 	}
@@ -37,7 +37,7 @@ func main() {
 		os.Exit(-1)
 	}
 
-	if err := mclient.Init(PluginInfo); err != nil {
+	if err := mclient.Init(pluginInfo); err != nil {
 		fmt.Printf("failed to init plugin client: %s\n", err.Error())
 		os.Exit(-1)
 	}
