@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"os"
 
-	"gitee.com/openeuler/PilotGo-plugins/sdk/logger"
+	"gitee.com/openeuler/PilotGo/sdk/logger"
 	"github.com/gin-gonic/gin"
 
 	"gitee.com/openeuler/PilotGo-plugin-mysql/client"

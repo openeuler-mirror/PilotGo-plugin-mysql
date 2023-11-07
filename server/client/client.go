@@ -3,7 +3,7 @@ package client
 import (
 	"github.com/gin-gonic/gin"
 
-	"gitee.com/openeuler/PilotGo-plugins/sdk/plugin/client"
+	"gitee.com/openeuler/PilotGo/sdk/plugin/client"
 )
 
 var globalClient *client.Client
