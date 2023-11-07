@@ -6,8 +6,8 @@ import (
 	"os/signal"
 	"syscall"
 
-	"gitee.com/openeuler/PilotGo-plugins/sdk/logger"
-	"gitee.com/openeuler/PilotGo-plugins/sdk/plugin/client"
+	"gitee.com/openeuler/PilotGo/sdk/logger"
+	"gitee.com/openeuler/PilotGo/sdk/plugin/client"
 
 	mclient "gitee.com/openeuler/PilotGo-plugin-mysql/client"
 	"gitee.com/openeuler/PilotGo-plugin-mysql/config"
