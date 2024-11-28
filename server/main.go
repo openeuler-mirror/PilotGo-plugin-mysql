@@ -1,3 +1,10 @@
+/*
+ * Copyright (c) KylinSoft  Co., Ltd. 2024.All rights reserved.
+ * PilotGo-plugin-mysql licensed under the Mulan Permissive Software License, Version 2. 
+ * See LICENSE file for more details.
+ * Author: guozhengxin <guozhengxin@kylinos.cn>
+ * Date: Thu Jul 6 14:30:09 2023 +0800
+ */
 package main
 
 import (
