@@ -19,7 +19,7 @@ MySQL插件基于[mysqld-exporter](https://github.com/prometheus/mysqld_exporter
 3. 使用MySQL插件功能
 
 #### 补充链接
-1.  [PilotGo使用手册](https://atomgit.com/openeuler/docs/tree/master/docs/zh/docs/PilotGo/使用手册.md)
+1.  [PilotGo使用手册](https://atomgit.com/openeuler/PilotGo/tree/master/docs/zh/usage_instructions.md)
 2.  PilotGo[代码仓](https://atomgit.com/openeuler/PilotGo)
 3.  PilotGo[软件包仓](https://atomgit.com/src-openeuler/PilotGo)
 
