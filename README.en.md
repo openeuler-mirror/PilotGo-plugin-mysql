@@ -19,9 +19,9 @@ The MySQL plugin is based on [mysqld-exporter](https://github.com/prometheus/mys
 3. Use the MySQL plugin functions
 
 #### Supplementary Links
-1.  [PilotGo User Manual](https://gitee.com/openeuler/docs/tree/master/docs/zh/docs/PilotGo/使用手册.md)
-2.  PilotGo [Code Repository](https://gitee.com/openeuler/PilotGo)
-3.  PilotGo [Package Repository](https://gitee.com/src-openeuler/PilotGo)
+1.  [PilotGo User Manual](https://atomgit.com/openeuler/docs/tree/master/docs/zh/docs/PilotGo/使用手册.md)
+2.  PilotGo [Code Repository](https://atomgit.com/openeuler/PilotGo)
+3.  PilotGo [Package Repository](https://atomgit.com/src-openeuler/PilotGo)
 
 #### Usage Instructions
 

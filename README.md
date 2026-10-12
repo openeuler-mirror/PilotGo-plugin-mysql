@@ -3,7 +3,7 @@
 #### 介绍
 PilotGo MySQL应用插件，提供MySQL实例的监控、管理、安全分析及优化建议等功能。
 
-MySQL插件基于[mysqld-expoter](https://github.com/prometheus/mysqld_exporter)提供基本的监控数据采集，同时提供MySQL集群巡检、安全检查、性能分析、运行状态分析等功能，保障业务集群的稳定运行。
+MySQL插件基于[mysqld-exporter](https://github.com/prometheus/mysqld_exporter)提供基本的监控数据采集，同时提供MySQL集群巡检、安全检查、性能分析、运行状态分析等功能，保障业务集群的稳定运行。
 
 *note*：PilotGo MySQL插件运行依赖PilotGo主平台，如何在PilotGo平台中使用插件，请参考PilotGo平台文档。
 
@@ -19,9 +19,9 @@ MySQL插件基于[mysqld-expoter](https://github.com/prometheus/mysqld_exporter)
 3. 使用MySQL插件功能
 
 #### 补充链接
-1.  [PilotGo使用手册](https://gitee.com/openeuler/docs/tree/master/docs/zh/docs/PilotGo/使用手册.md)
-2.  PilotGo[代码仓](https://gitee.com/openeuler/PilotGo)
-3.  PilotGo[软件包仓](https://gitee.com/src-openeuler/PilotGo)
+1.  [PilotGo使用手册](https://atomgit.com/openeuler/docs/tree/master/docs/zh/docs/PilotGo/使用手册.md)
+2.  PilotGo[代码仓](https://atomgit.com/openeuler/PilotGo)
+3.  PilotGo[软件包仓](https://atomgit.com/src-openeuler/PilotGo)
 
 #### 使用说明
 
