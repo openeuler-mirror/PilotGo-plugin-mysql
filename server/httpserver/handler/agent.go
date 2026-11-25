@@ -18,9 +18,9 @@ func AgentInfoHandler(ctx *gin.Context) {
 	ctx.String(http.StatusOK, "monitor agent info")
 }
 
-func AgentInstallHandler(ctx *gin.Context) {
+func AgentInstallHandler(reqCtx *gin.Context) {
 
-	ctx.String(http.StatusOK, "install monitor agent")
+	reqCtx.String(http.StatusOK, "install monitor agent")
 }
 
 func AgentUpdateHandler(ctx *gin.Context) {
