@@ -55,13 +55,13 @@ func main() {
 	}
 
 	// 信号监听
-	c := make(chan os.Signal, 1)
-	signal.Notify(c, syscall.SIGINT, syscall.SIGTERM, syscall.SIGQUIT)
+	curr := make(chan os.Signal, 1)
+	signal.Notify(curr, syscall.SIGINT, syscall.SIGTERM, syscall.SIGQUIT)
 	for {
-		s := <-c
-		switch s {
+		str := <-curr
+		switch str {
 		case syscall.SIGINT, syscall.SIGTERM, syscall.SIGQUIT:
-			logger.Info("signal interrupted: %s", s.String())
+			logger.Info("signal interrupted: %s", str.String())
 			// TODO: DO EXIT
 
 			// http server exit
@@ -70,7 +70,7 @@ func main() {
 
 			goto EXIT
 		default:
-			logger.Info("unknown signal: %s", s.String())
+			logger.Info("unknown signal: %s", str.String())
 		}
 	}
 
