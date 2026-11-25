@@ -21,6 +21,6 @@ func Init(info *client.PluginInfo) error {
 	return nil
 }
 
-func RegisterHandlers(engine *gin.Engine) {
-	globalClient.RegisterHandlers(engine)
+func RegisterHandlers(router *gin.Engine) {
+	globalClient.RegisterHandlers(router)
 }
