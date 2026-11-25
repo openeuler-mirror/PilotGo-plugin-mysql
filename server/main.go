@@ -35,12 +35,12 @@ func main() {
 	fmt.Println("Thanks to choose PilotGo!")
 
 	if err := config.Init("./config.yaml"); err != nil {
-		fmt.Printf("failed to init config module: %s\n", err.Error())
+		fmt.Printf("failed to init config module: %s\n", err)
 		os.Exit(-1)
 	}
 
 	if err := logger.Init(config.Config().LogConf); err != nil {
-		fmt.Printf("failed to init logger module: %s\n", err.Error())
+		fmt.Printf("failed to init logger module: %s\n", err)
 		os.Exit(-1)
 	}
 
