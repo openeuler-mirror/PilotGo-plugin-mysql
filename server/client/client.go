@@ -15,8 +15,8 @@ import (
 
 var globalClient *client.Client
 
-func Init(info *client.PluginInfo) error {
-	globalClient = client.DefaultClient(info)
+func Init(pluginInfo *client.PluginInfo) error {
+	globalClient = client.DefaultClient(pluginInfo)
 
 	return nil
 }
