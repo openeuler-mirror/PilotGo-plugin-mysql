@@ -25,14 +25,14 @@ var httpServer *http.Server
 
 func Start() error {
 	conf := config.Config().HttpServerConf
-	engine := gin.New()
+	router := gin.New()
 	logger.Info("start http service on: http://%s", conf.Addr)
 
-	registerHandlers(engine)
+	registerHandlers(router)
 
 	httpServer = &http.Server{
 		Addr:    conf.Addr,
-		Handler: engine,
+		Handler: router,
 	}
 	go func() {
 		if err := httpServer.ListenAndServe(); err != nil && !errors.Is(err, http.ErrServerClosed) {
