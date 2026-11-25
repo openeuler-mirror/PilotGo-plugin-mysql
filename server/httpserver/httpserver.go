@@ -44,8 +44,8 @@ func Start() error {
 }
 
 func Stop() error {
-	ctx := context.Background()
-	if err := httpServer.Shutdown(ctx); err != nil {
+	reqCtx := context.Background()
+	if err := httpServer.Shutdown(reqCtx); err != nil {
 		logger.Error("stop http server error: %s", err.Error())
 		return err
 	}
