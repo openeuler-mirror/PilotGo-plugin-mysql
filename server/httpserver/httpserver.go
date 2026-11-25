@@ -46,25 +46,25 @@ func Start() error {
 func Stop() error {
 	reqCtx := context.Background()
 	if err := httpServer.Shutdown(reqCtx); err != nil {
-		logger.Error("stop http server error: %s", err.Error())
+		logger.Error("stop http server error: %s", err)
 		return err
 	}
 	return nil
 }
 
 // 注册http handler
-func registerHandlers(engine *gin.Engine) {
+func registerHandlers(router *gin.Engine) {
 
 	// 注册client默认的handlers
-	client.RegisterHandlers(engine)
+	client.RegisterHandlers(router)
 
-	api := engine.Group("plugin/mysql/api")
+	apiGroup := router.Group("plugin/mysql/api")
 
 	// 监控agent相关接口
 	{
-		api.GET("/info", handler.AgentInfoHandler)
-		api.PUT("/install", handler.AgentInstallHandler)
-		api.PUT("/update", handler.AgentInstallHandler)
-		api.DELETE("/uninstall", handler.AgentUninstallHandler)
+		apiGroup.GET("/info", handler.AgentInfoHandler)
+		apiGroup.PUT("/install", handler.AgentInstallHandler)
+		apiGroup.PUT("/update", handler.AgentInstallHandler)
+		apiGroup.DELETE("/uninstall", handler.AgentUninstallHandler)
 	}
 }
