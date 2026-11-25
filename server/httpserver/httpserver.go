@@ -24,14 +24,14 @@ import (
 var httpServer *http.Server
 
 func Start() error {
-	conf := config.Config().HttpServerConf
+	serverConf := config.Config().HttpServerConf
 	router := gin.New()
-	logger.Info("start http service on: http://%s", conf.Addr)
+	logger.Info("start http service on: http://%s", serverConf.Addr)
 
 	registerHandlers(router)
 
 	httpServer = &http.Server{
-		Addr:    conf.Addr,
+		Addr:    serverConf.Addr,
 		Handler: router,
 	}
 	go func() {
