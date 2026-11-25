@@ -44,16 +44,16 @@ type ServerConfig struct {
 
 var globalConfig = &ServerConfig{}
 
-func Init(path string) error {
-	bytes, err := ioutil.ReadFile(path)
+func Init(configPath string) error {
+	rawBytes, err := ioutil.ReadFile(configPath)
 	if err != nil {
-		fmt.Printf("open config file %s failed! err = %s\n", path, err.Error())
+		fmt.Printf("open config file %s failed! err = %s\n", configPath, err.Error())
 		return err
 	}
 
-	err = yaml.Unmarshal(bytes, globalConfig)
+	err = yaml.Unmarshal(rawBytes, globalConfig)
 	if err != nil {
-		fmt.Printf("config file Unmarshal %s failed!\n", string(bytes))
+		fmt.Printf("config file Unmarshal %s failed!\n", string(rawBytes))
 		return err
 	}
 	return nil
