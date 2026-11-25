@@ -45,12 +45,12 @@ func main() {
 	}
 
 	if err := mclient.Init(pluginInfo); err != nil {
-		fmt.Printf("failed to init plugin client: %s\n", err.Error())
+		fmt.Printf("failed to init plugin client: %s\n", err)
 		os.Exit(-1)
 	}
 
 	if err := httpserver.Start(); err != nil {
-		fmt.Printf("failed to start http server: %s\n", err.Error())
+		fmt.Printf("failed to start http server: %s\n", err)
 		os.Exit(-1)
 	}
 
